@@ -15,10 +15,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
-    Route::get('news/create', 'Admin\Newscontroller@add');
-    Route::post('news/create', 'Admin\Newscontroller@create');
-    Route::post('news/edit', 'Admin\Newscontroller@update');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+  Route::get('news/create', 'Admin\Newscontroller@add');
+  Route::post('news/create', 'Admin\Newscontroller@create');
+  Route::get('news', 'Admin\Newscontroller@index');
+  Route::get('news/edit', 'Admin\Newscontroller@edit');
+  Route::post('news/edit', 'Admin\Newscontroller@update');
+  Route::get('news/delete', 'Admin\Newscontroller@delete');
 });
 
 
