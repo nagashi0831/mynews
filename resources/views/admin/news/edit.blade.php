@@ -1,8 +1,8 @@
 @extends('layouts.admin')
-@section('title', 'ニュースの編集')
+@section('title', ニュースの編集')
 
 @section('content')
-<dic class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>ニュース編集</h2>

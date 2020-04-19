@@ -15,7 +15,8 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
-            
+             $table->integer('news_id');
+            $table->string('edited_at');
             
         });
     }
