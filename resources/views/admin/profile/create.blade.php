@@ -32,10 +32,10 @@
                         <div class="col-md-10">
                             男(man)
                             <input type="radio" class="form-control" name="gender"
-                            value="man">
+                            value="男">
                             女(woman)
                             <input type="radio" class="form-control" name="gender"
-                            value="woman">
+                            value="女">
                         </div>
                     </div>
                     <div class="form-group row">
