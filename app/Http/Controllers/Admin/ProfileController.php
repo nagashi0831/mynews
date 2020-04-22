@@ -40,17 +40,19 @@ class ProfileController extends Controller
       return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
     
+    
     public function edit(Request $request)
     {
         //Profileモデルからデータを取得する
         $profile = Profile::find($request->id);
         if (empty($profile)) {
             abort(404);
+            
         }
         return view('admin.profile.edit', ['profile_form'=>$profile]);
     }
     
-    public function update()
+    public function update(Request $request)
     {
         //validationをかける
         $this->validate($request, Profile::$rules);
@@ -60,7 +62,7 @@ class ProfileController extends Controller
         $profile_form = $request->all();
         unset($profile_form['_token']);
         $profile->fill($profile_form)->save();
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile/');
     }
     
     public function delete(Request $request)
